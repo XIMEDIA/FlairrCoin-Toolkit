@@ -24,6 +24,8 @@ export enum Unit {
   KNano = 'KNano',
   /** 10^36 raw */
   MNano = 'MNano',
+  /** 10^30 raw */
+  Flairr = 'Flairr', //Flaircoin
 }
 
 const ZEROES: { [unit in keyof typeof Unit]: number } = {
@@ -35,6 +37,7 @@ const ZEROES: { [unit in keyof typeof Unit]: number } = {
   NANO: 30,
   KNano: 33,
   MNano: 36,
+  Flairr: 30, // flairrcoin!
 }
 
 const TunedBigNumber = BigNumber.clone({

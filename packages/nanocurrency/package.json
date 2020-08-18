@@ -17,7 +17,8 @@
   "bugs": "https://github.com/marvinroger/nanocurrency-js/issues",
   "dependencies": {
     "bignumber.js": "^9.0.0",
-    "blakejs": "^1.1.0"
+    "blakejs": "^1.1.0",
+    "nanocurrency": "^2.5.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
