@@ -144,7 +144,7 @@ export function createBlock(secretKey: string, data: BlockData, params: BlockPar
   }
 
   const publicKey = derivePublicKey(secretKey)
-  const account = (params.useNanoPrefix === true) ? deriveAddress(publicKey,{useNanoPrefix:true}) : (params.useFlairrPrefix === true) ? deriveAddress(publicKey,{useBananoPrefix:true}) : deriveAddress(publicKey)
+  const account = (params.useNanoPrefix === true) ? deriveAddress(publicKey,{useNanoPrefix:true}) : (params.useFlairrPrefix === true) ? deriveAddress(publicKey,{useFlairrPrefix:true}) : deriveAddress(publicKey)
   // we use unsafeHashBlock because we already
   // checked the input
   const hash = unsafeHashBlock({
