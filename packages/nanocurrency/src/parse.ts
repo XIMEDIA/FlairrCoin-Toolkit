@@ -20,18 +20,21 @@ export function parseAddress(address: {}): ParseAddressResult {
   const invalid = { valid: false, publicKeyBytes: null }
   if (
     !checkString(address) ||
-    !/^(xrb_|nano_)[13][13-9a-km-uw-z]{59}$/.test(address as string)
+    !/^(xrb_|nano_|flr_)[13][13-9a-km-uw-z]{59}$/.test(address as string)
   ) {
     return invalid
   }
 
-  let prefixLength
-  if ((address as string).startsWith('xrb_')) {
-    prefixLength = 4
-  } else {
-    // nano_
-    prefixLength = 5
-  }
+  let prefixLength = 4; //flr_ is four 
+  // if (
+  //   (address as string).startsWith('xrb_') ||
+  //   (address as string).startsWith('flr_')
+  // ) {
+  //   prefixLength = 4
+  // } else {
+  //   // nano_
+  //   prefixLength = 5
+  // }
 
   const publicKeyBytes = decodeNanoBase32(
     (address as string).substr(prefixLength, 52)
