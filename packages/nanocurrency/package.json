@@ -1,11 +1,11 @@
 {
-  "name": "nanocurrency",
-  "description": "A toolkit for the Nano cryptocurrency, allowing you to derive keys, generate seeds, hashes, signatures, proofs of work and blocks.",
-  "version": "2.5.0",
+  "name": "flairrcurrency-toolkit",
+  "description": "A toolkit for the Flairr cryptocurrency, allowing you to derive keys, generate seeds, hashes, signatures, proofs of work and blocks.",
+  "version": "1.0.1",
   "author": {
-    "name": "Marvin ROGER",
-    "email": "dev@marvinroger.fr",
-    "url": "https://www.marvinroger.fr"
+    "name": "Matthew Jury",
+    "email": "matthewdoomer@gmail.com",
+    "url": ""
   },
   "browser": {
     "path": false,
@@ -14,7 +14,7 @@
     "util": false,
     "./dist/nanocurrency.cjs.js": "./dist/nanocurrency.umd.js"
   },
-  "bugs": "https://github.com/marvinroger/nanocurrency-js/issues",
+  "bugs": "",
   "dependencies": {
     "bignumber.js": "^9.0.0",
     "blakejs": "^1.1.0",
@@ -38,7 +38,7 @@
   "files": [
     "dist/"
   ],
-  "homepage": "https://github.com/marvinroger/nanocurrency-js/tree/master/packages/nanocurrency",
+  "homepage": "",
   "keywords": [
     "crypto",
     "currency",
@@ -70,6 +70,6 @@
     "generate-docs": "fusee generate-docs",
     "lint": "fusee lint",
     "test": "fusee test",
-    "prepublishOnly": "yarn build:prod && yarn test && yarn lint && yarn generate-docs"
+    "prepublishOnly": ""
   }
 }

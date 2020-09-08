@@ -87,8 +87,7 @@ export interface DeriveAddressParams {
   /** Whether to use nano_ instead of xrb_ */
   useNanoPrefix?: boolean
   /** Whether to use ban_ instead of xrb_ */
-    useFlairrPrefix?: boolean
-
+  useFlairrPrefix?: boolean
 }
 
 /**

@@ -25,13 +25,16 @@ export function parseAddress(address: {}): ParseAddressResult {
     return invalid
   }
 
-  let prefixLength
-  if ((address as string).startsWith('xrb_') || (address as string).startsWith('flr_')){
-    prefixLength = 4
-  } else {
-    // nano_
-    prefixLength = 5
-  }
+  let prefixLength = 4; //flr_ is four 
+  // if (
+  //   (address as string).startsWith('xrb_') ||
+  //   (address as string).startsWith('flr_')
+  // ) {
+  //   prefixLength = 4
+  // } else {
+  //   // nano_
+  //   prefixLength = 5
+  // }
 
   const publicKeyBytes = decodeNanoBase32(
     (address as string).substr(prefixLength, 52)

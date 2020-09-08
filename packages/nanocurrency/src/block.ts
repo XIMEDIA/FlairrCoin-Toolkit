@@ -91,7 +91,11 @@ export interface BlockParams {
  * @param BlockParams - Optional block settings
  * @returns Block
  */
-export function createBlock(secretKey: string, data: BlockData, params: BlockParams = {}): Block {
+export function createBlock(
+  secretKey: string,
+  data: BlockData,
+  params: BlockParams = {}
+): Block {
   if (!checkKey(secretKey)) throw new Error('Secret key is not valid')
   if (typeof data.work === 'undefined') throw new Error('Work is not set')
   if (!checkAddress(data.representative)) {
@@ -144,7 +148,12 @@ export function createBlock(secretKey: string, data: BlockData, params: BlockPar
   }
 
   const publicKey = derivePublicKey(secretKey)
-  const account = (params.useNanoPrefix === true) ? deriveAddress(publicKey,{useNanoPrefix:true}) : (params.useFlairrPrefix === true) ? deriveAddress(publicKey,{useFlairrPrefix:true}) : deriveAddress(publicKey)
+  const account =
+    params.useNanoPrefix === true
+      ? deriveAddress(publicKey, { useNanoPrefix: true })
+      : params.useFlairrPrefix === true
+      ? deriveAddress(publicKey, { useFlairrPrefix: true })
+      : deriveAddress(publicKey)
   // we use unsafeHashBlock because we already
   // checked the input
   const hash = unsafeHashBlock({
